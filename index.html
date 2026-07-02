@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Permis bateau moteur Suisse (cat. A) — Fiches & Quiz</title>
+<meta name="description" content="Révisez l'examen théorique du permis bateau à moteur catégorie A en Suisse : fiches de révision et quiz à choix multiple basés sur l'ONI.">
+<style>
+  :root{
+    --bg:#0d2438; --bg2:#123250; --card:#ffffff; --ink:#0d2438; --muted:#5b7186;
+    --line:#dce6ef; --accent:#0a84d8; --accent2:#0aa0c4; --good:#1f9d57; --bad:#d2453a;
+    --good-bg:#e7f6ee; --bad-bg:#fceae9; --shadow:0 6px 24px rgba(13,36,56,.10);
+    --wave:#1a4d72;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:#eef3f8;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent)}
+
+  /* Header */
+  header{background:linear-gradient(165deg,var(--bg) 0%,var(--bg2) 100%);color:#fff;position:relative;overflow:hidden}
+  header .wrap{max-width:980px;margin:0 auto;padding:34px 20px 64px;position:relative;z-index:2}
+  header h1{margin:0 0 6px;font-size:clamp(1.5rem,4vw,2.2rem);letter-spacing:-.5px}
+  header p{margin:0;color:#bcd4e8;font-size:1rem;max-width:640px}
+  .flag{display:inline-block;background:#d52b1e;color:#fff;font-weight:700;border-radius:5px;
+    padding:1px 7px;margin-right:8px;font-size:.85em;position:relative;top:-2px}
+  .wave{position:absolute;bottom:-1px;left:0;width:100%;height:54px;display:block;z-index:1}
+
+  /* Nav tabs */
+  nav.tabs{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);box-shadow:0 2px 10px rgba(13,36,56,.05)}
+  nav.tabs .wrap{max-width:980px;margin:0 auto;display:flex;gap:4px;padding:0 12px}
+  nav.tabs button{flex:1;max-width:200px;background:none;border:none;cursor:pointer;font:inherit;
+    padding:14px 10px;color:var(--muted);font-weight:600;border-bottom:3px solid transparent;transition:.15s}
+  nav.tabs button:hover{color:var(--ink)}
+  nav.tabs button.active{color:var(--accent);border-bottom-color:var(--accent)}
+
+  main{max-width:980px;margin:0 auto;padding:26px 20px 80px}
+  .view{display:none;animation:fade .3s ease}
+  .view.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  h2.section{font-size:1.4rem;margin:0 0 4px}
+  .lead{color:var(--muted);margin:0 0 22px}
+
+  /* Home cards */
+  .home-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin:22px 0}
+  .big-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;
+    box-shadow:var(--shadow);cursor:pointer;transition:.18s;text-align:left}
+  .big-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(13,36,56,.16)}
+  .big-card .ic{font-size:2rem}
+  .big-card h3{margin:10px 0 6px;font-size:1.2rem}
+  .big-card p{margin:0;color:var(--muted);font-size:.94rem}
+  .stat-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px;flex:1;min-width:130px;text-align:center}
+  .stat b{display:block;font-size:1.5rem;color:var(--accent)}
+  .stat span{font-size:.82rem;color:var(--muted)}
+  .exam-box{background:#eaf4fc;border:1px solid #c4e0f5;border-radius:14px;padding:16px 20px;margin-top:22px}
+  .exam-box h4{margin:0 0 8px;color:var(--bg)}
+  .exam-box ul{margin:0;padding-left:20px;color:#244763}
+  .exam-box li{margin:3px 0}
+
+  /* Fiches accordion */
+  .fiche{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;
+    box-shadow:0 2px 8px rgba(13,36,56,.05);overflow:hidden}
+  .fiche>summary{list-style:none;cursor:pointer;padding:16px 20px;display:flex;align-items:center;gap:12px;
+    font-weight:700;font-size:1.05rem}
+  .fiche>summary::-webkit-details-marker{display:none}
+  .fiche>summary .ic{font-size:1.3rem}
+  .fiche>summary .chev{margin-left:auto;color:var(--muted);transition:.2s;font-size:1.1rem}
+  .fiche[open]>summary{border-bottom:1px solid var(--line);background:#f7fafd}
+  .fiche[open]>summary .chev{transform:rotate(180deg)}
+  .fiche .body{padding:6px 22px 20px}
+  .fiche .body h4{color:var(--accent);margin:18px 0 6px;font-size:1rem}
+  .fiche .body ul,.fiche .body ol{margin:6px 0 6px;padding-left:22px}
+  .fiche .body li{margin:4px 0}
+  .fiche .body p{margin:8px 0}
+  .fiche .body .fiche-cta{margin-top:20px;padding-top:16px;border-top:1px solid var(--line);text-align:center}
+  .fiche .body table{border-collapse:collapse;width:100%;margin:10px 0;font-size:.92rem}
+  .fiche .body th,.fiche .body td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+  .fiche .body th{background:#eef4fa}
+  .fiche-tools{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;border:none;
+    border-radius:10px;padding:11px 20px;font:inherit;font-weight:600;cursor:pointer;transition:.15s;text-decoration:none}
+  .btn:hover{filter:brightness(1.06)}
+  .btn.sec{background:#fff;color:var(--accent);border:1.5px solid var(--accent)}
+  .btn.ghost{background:#eef3f8;color:var(--ink);border:1px solid var(--line)}
+  .btn:disabled{opacity:.45;cursor:not-allowed}
+  #next-btn.ready{box-shadow:0 0 0 3px rgba(10,132,216,.40);animation:pulseNext 1.4s ease-in-out infinite}
+  @keyframes pulseNext{0%,100%{box-shadow:0 0 0 3px rgba(10,132,216,.40)}50%{box-shadow:0 0 0 8px rgba(10,132,216,.10)}}
+  #next-btn:focus-visible{outline:3px solid rgba(10,132,216,.55);outline-offset:2px}
+
+  /* Quiz setup */
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow);margin-bottom:18px}
+  .panel h3{margin:0 0 4px;font-size:1.1rem}
+  .panel .hint{color:var(--muted);font-size:.9rem;margin:0 0 14px}
+  .chips{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:6px}
+  .chip{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;cursor:pointer;
+    font-size:.9rem;font-weight:600;color:var(--muted);transition:.13s;user-select:none}
+  .chip:hover{border-color:var(--accent)}
+  .chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+  .chip .n{opacity:.7;font-weight:500;margin-left:5px}
+  .chip.on .n{opacity:.85}
+  .mode-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+  .mode-row .chip{border-radius:10px}
+
+  /* Quiz play */
+  .quizbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;flex-wrap:wrap}
+  .progress{flex:1;min-width:160px;height:9px;background:#dde7f0;border-radius:6px;overflow:hidden}
+  .progress > i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .3s}
+  .qcount{font-weight:600;color:var(--muted);font-size:.9rem}
+  .score-pill{font-weight:700;color:var(--good);font-size:.9rem}
+  .qcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow)}
+  .qtheme{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--accent);margin-bottom:8px}
+  .qtext{font-size:1.18rem;font-weight:600;margin:0 0 18px;line-height:1.4}
+  .opts{display:flex;flex-direction:column;gap:10px}
+  .opt{display:flex;align-items:center;gap:12px;border:1.5px solid var(--line);border-radius:12px;padding:13px 16px;
+    cursor:pointer;transition:.13s;background:#fff;text-align:left;font:inherit;font-size:1rem}
+  .opt:hover:not(.locked){border-color:var(--accent);background:#f6fbff}
+  .opt .letter{width:26px;height:26px;flex:none;border-radius:50%;background:#eef3f8;color:var(--muted);
+    font-weight:700;display:grid;place-items:center;font-size:.85rem}
+  .opt.correct{border-color:var(--good);background:var(--good-bg)}
+  .opt.correct .letter{background:var(--good);color:#fff}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .letter{background:var(--bad);color:#fff}
+  .opt.locked{cursor:default}
+  .opt.dim{opacity:.6}
+  .explain{margin-top:16px;border-left:4px solid var(--accent);background:#f2f8fd;border-radius:0 10px 10px 0;
+    padding:13px 16px;font-size:.95rem;display:none}
+  .explain.show{display:block;animation:fade .25s}
+  .explain .verdict{font-weight:700;margin-bottom:4px}
+  .explain .verdict.ok{color:var(--good)}
+  .explain .verdict.no{color:var(--bad)}
+  .explain .ref{display:inline-block;margin-top:8px;font-size:.78rem;color:var(--muted);background:#e4edf5;border-radius:6px;padding:2px 8px}
+  .qfoot{display:flex;justify-content:flex-end;gap:10px;margin-top:18px}
+
+  /* Results */
+  .result{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:34px 24px;
+    box-shadow:var(--shadow);text-align:center}
+  .result .ring{font-size:3.2rem;font-weight:800;margin:6px 0}
+  .result .verdict-big{font-size:1.3rem;font-weight:700;margin-bottom:6px}
+  .result .verdict-big.pass{color:var(--good)}
+  .result .verdict-big.fail{color:var(--bad)}
+  .result p{color:var(--muted);margin:6px 0 20px}
+  .result .btn{margin:4px}
+  .flash-q{font-size:.78rem;color:var(--muted);text-align:center;margin-top:18px}
+  footer{max-width:980px;margin:0 auto;padding:0 20px 50px;color:var(--muted);font-size:.82rem}
+  footer hr{border:none;border-top:1px solid var(--line);margin:0 0 16px}
+
+  /* Diagrams / schémas */
+  .fiche .body figure.diagram{margin:18px 0;padding:14px;background:#f7fafd;border:1px solid var(--line);
+    border-radius:12px;text-align:center}
+  .fiche .body figure.diagram svg{max-width:100%;height:auto}
+  .fiche .body figure.diagram figcaption{font-size:.84rem;color:var(--muted);margin-top:10px;line-height:1.45}
+  .diagram-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;align-items:flex-start}
+  .diagram-row .cell{flex:1 1 120px;min-width:110px;max-width:200px}
+  .diagram-row .cell svg{width:100%}
+  .diagram-row .cell .cap{font-size:.78rem;color:var(--muted);margin-top:6px;line-height:1.3}
+  .legend{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;font-size:.82rem;color:var(--muted);margin:10px 0 2px}
+  .legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+  /* sound signals */
+  .soundsig{display:flex;flex-direction:column;gap:9px;margin:6px 0}
+  .ss-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .ss-bars{display:inline-flex;gap:4px;align-items:center}
+  .ss-bars i{height:14px;border-radius:3px;background:var(--bg);display:inline-block}
+  .ss-bars i.l{width:46px}
+  .ss-bars i.s{width:13px}
+  .ss-bars i.v{width:6px}
+  .ss-lbl{font-size:.92rem}
+  /* météo blinking lamps */
+  @keyframes blkA{0%,46%{opacity:1}54%,100%{opacity:.12}}
+  @keyframes blkB{0%,42%{opacity:1}58%,100%{opacity:.12}}
+  .blinkA{animation:blkA 1.5s steps(1,end) infinite}
+  .blinkB{animation:blkB .66s steps(1,end) infinite}
+
+  /* Programme adaptatif */
+  .banner{background:#e7f6ee;border:1px solid #bfe6cf;color:#1f7a48;border-radius:10px;padding:12px 16px;margin-bottom:16px;font-size:.95rem}
+  .dash{display:flex;align-items:center;gap:22px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow);flex-wrap:wrap}
+  .ring2{--p:0;width:120px;height:120px;border-radius:50%;flex:none;background:conic-gradient(var(--accent) calc(var(--p)*1%),#dde7f0 0);display:grid;place-items:center}
+  .ring2 .inner{width:92px;height:92px;border-radius:50%;background:#fff;display:grid;place-items:center;text-align:center;line-height:1.1}
+  .ring2 .inner b{font-size:1.5rem;color:var(--ink)}
+  .ring2 .inner span{font-size:.75rem;color:var(--muted)}
+  .dash-meta{flex:1;min-width:200px}
+  .dash-pct{font-size:2rem;font-weight:800;color:var(--accent);line-height:1}
+  .dash-sub{color:var(--muted);font-size:.9rem;margin:2px 0 10px}
+  .nextstep{background:#eaf4fc;border:1px solid #c4e0f5;border-radius:10px;padding:10px 14px;font-size:.92rem;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .nextstep.done{background:#e7f6ee;border-color:#bfe6cf}
+  .prog-h{font-size:1.1rem;margin:24px 0 10px}
+  .tlist{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:640px){.tlist{grid-template-columns:1fr}.dash{gap:16px}}
+  .tcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:0 2px 8px rgba(13,36,56,.05)}
+  .tcard-h{display:flex;align-items:center;gap:9px;font-size:1.02rem;margin-bottom:10px}
+  .tcard-h .tic{font-size:1.2rem}
+  .tcard-h b{flex:1}
+  .tbadge{font-size:.72rem;font-weight:700;border-radius:999px;padding:3px 9px;white-space:nowrap}
+  .tbadge.ok{background:#e7f6ee;color:#1f7a48}
+  .tbadge.mid{background:#fdf0e1;color:#b9711b}
+  .tbadge.todo{background:#eef3f8;color:#5b7186}
+  .progress.sm{height:8px;min-width:0;margin-bottom:6px}
+  .tcard-meta{font-size:.82rem;color:var(--muted);margin-bottom:12px}
+  .tcard-act{display:flex;gap:8px;flex-wrap:wrap}
+  .btn.sm{padding:7px 13px;font-size:.85rem;border-radius:9px}
+  .donebox{margin-top:18px;border:1px solid var(--line);border-radius:14px;background:var(--card);overflow:hidden}
+  .donebox>summary{cursor:pointer;padding:14px 18px;font-weight:700;list-style:none}
+  .donebox>summary::-webkit-details-marker{display:none}
+  .donebox[open]>summary{border-bottom:1px solid var(--line)}
+  .donebox .tlist{padding:16px}
+  .prog-tools{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1><span class="flag">CH</span>Permis bateau à moteur — Catégorie A</h1>
+    <p>Préparez l'examen théorique suisse : fiches de révision synthétiques et quiz à choix multiple, fondés sur l'Ordonnance sur la navigation dans les eaux suisses (ONI).</p>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 54" preserveAspectRatio="none"><path fill="#eef3f8" d="M0,32 C240,64 480,0 720,16 C960,32 1200,64 1440,28 L1440,54 L0,54 Z"></path></svg>
+</header>
+
+<nav class="tabs">
+  <div class="wrap">
+    <button data-tab="home" class="active">Accueil</button>
+    <button data-tab="program">Programme</button>
+    <button data-tab="fiches">Fiches</button>
+    <button data-tab="quiz">Quiz</button>
+  </div>
+</nav>
+
+<main>
+  <!-- HOME -->
+  <section id="home" class="view active">
+    <h2 class="section">Bienvenue à bord</h2>
+    <p class="lead">Tout ce qu'il faut pour réviser la théorie du permis moteur, en un seul endroit.</p>
+
+    <div class="home-grid">
+      <button class="big-card" onclick="go('program')">
+        <h3>Mon programme</h3>
+        <p>Un test de niveau crée un parcours sur mesure : on cible ce qu'il vous reste à apprendre et on met de côté ce que vous maîtrisez déjà.</p>
+      </button>
+      <button class="big-card" onclick="go('fiches')">
+        <h3>Fiches de révision</h3>
+        <p>10 thèmes synthétiques : règles de route, feux, signaux, météo, sécurité, matelotage, environnement…</p>
+      </button>
+      <button class="big-card" onclick="go('quiz')">
+        <h3>Quiz d'entraînement</h3>
+        <p>Des questions à choix multiple avec explications. Mode aléatoire, examen blanc ou par thème.</p>
+      </button>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat"><b id="stat-q">—</b><span>questions</span></div>
+      <div class="stat"><b id="stat-f">10</b><span>fiches thématiques</span></div>
+      <div class="stat"><b>180</b><span>points à l'examen</span></div>
+      <div class="stat"><b>50</b><span>minutes</span></div>
+    </div>
+
+    <div class="exam-box">
+      <h4>L'examen théorique en bref</h4>
+      <ul>
+        <li><strong>60 questions</strong>, 180 points maximum, <strong>50 minutes</strong>.</li>
+        <li>Réussite à <strong>165 points</strong> : maximum <strong>15 points de fautes</strong> tolérés.</li>
+        <li>Disponible en français, allemand, italien ou anglais.</li>
+        <li>Permis cat. A obligatoire dès <strong>6 kW</strong> de moteur (4,4 kW sur le lac de Constance), âge minimum <strong>18 ans</strong>.</li>
+        <li>L'examen pratique doit suivre dans les <strong>24 mois</strong>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROGRAMME -->
+  <section id="program" class="view">
+    <h2 class="section">Mon programme</h2>
+    <p class="lead">Un parcours adapté à ce que vous savez déjà : on met de côté les thèmes acquis et on cible ce qu'il reste à apprendre.</p>
+    <div id="program-content"></div>
+  </section>
+
+  <!-- FICHES -->
+  <section id="fiches" class="view">
+    <h2 class="section">Fiches de révision</h2>
+    <p class="lead">Cliquez sur un thème pour le déplier. Les chiffres-clés sont en gras.</p>
+    <div class="fiche-tools">
+      <button class="btn ghost" onclick="toggleAll(true)">Tout déplier</button>
+      <button class="btn ghost" onclick="toggleAll(false)">Tout replier</button>
+    </div>
+    <div id="fiches-list"></div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz" class="view">
+    <!-- setup -->
+    <div id="quiz-setup">
+      <h2 class="section">Quiz</h2>
+      <p class="lead">Choisissez vos thèmes et un mode, puis lancez-vous.</p>
+
+      <div class="panel">
+        <h3>1. Thèmes</h3>
+        <p class="hint">Aucun sélectionné = tous les thèmes.</p>
+        <div class="chips" id="theme-chips"></div>
+        <div style="margin-top:10px">
+          <button class="btn ghost" onclick="setAllThemes(true)">Tout sélectionner</button>
+          <button class="btn ghost" onclick="setAllThemes(false)">Tout désélectionner</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>2. Mode</h3>
+        <p class="hint">Choisissez la longueur de la session.</p>
+        <div class="mode-row" id="mode-chips">
+          <div class="chip on" data-mode="10">10 questions aléatoires</div>
+          <div class="chip" data-mode="20">20 questions</div>
+          <div class="chip" data-mode="exam">Examen blanc (60 q.)</div>
+          <div class="chip" data-mode="all">Toutes les questions</div>
+        </div>
+      </div>
+
+      <button class="btn" style="font-size:1.05rem;padding:14px 28px" onclick="startQuiz()">Commencer le quiz →</button>
+    </div>
+
+    <!-- play -->
+    <div id="quiz-play" style="display:none">
+      <div class="quizbar">
+        <button class="btn ghost" onclick="quitQuiz()" style="padding:8px 14px">✕ Quitter</button>
+        <div class="progress"><i id="prog-bar"></i></div>
+        <span class="qcount" id="q-count"></span>
+        <span class="score-pill" id="score-pill"></span>
+      </div>
+      <div class="qcard">
+        <div class="qtheme" id="q-theme"></div>
+        <p class="qtext" id="q-text"></p>
+        <div class="opts" id="q-opts"></div>
+        <button class="btn ghost" id="dontknow-btn" style="display:none;margin-top:12px" onclick="skipUnknown()">Je ne sais pas</button>
+        <div class="explain" id="q-explain">
+          <div class="verdict" id="q-verdict"></div>
+          <div id="q-exp-text"></div>
+          <span class="ref" id="q-ref"></span>
+        </div>
+        <div class="qfoot">
+          <button class="btn" id="next-btn" onclick="nextQuestion()" disabled>Suivant →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- results -->
+    <div id="quiz-result" style="display:none">
+      <div class="result">
+        <div class="ring" id="res-score"></div>
+        <div class="verdict-big" id="res-verdict"></div>
+        <p id="res-detail"></p>
+        <div>
+          <button class="btn" onclick="startQuiz()">↻ Recommencer</button>
+          <button class="btn ghost" onclick="go('program')">Mon programme</button>
+          <button class="btn sec" onclick="quitQuiz()">Changer les réglages</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <hr>
+  <p><strong>Sources :</strong> Ordonnance sur la navigation dans les eaux suisses (ONI, RS 747.201.1), OCN, SCAN-NE, MétéoSuisse, boatdriver.ch, schiffsfuehrerausweis.ch. Contenu pédagogique paraphrasé à but de révision — il ne remplace pas le texte officiel ni un cours agréé. Vérifiez toujours la réglementation en vigueur auprès de votre service cantonal de la navigation.</p>
+</footer>
+
+<script src="data.js"></script>
+<script>
+/* ---------- Navigation ---------- */
+function go(tab){
+  document.querySelectorAll('nav.tabs button').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
+  document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===tab));
+  if(tab==='program') renderProgram();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelectorAll('nav.tabs button').forEach(b=>b.onclick=()=>go(b.dataset.tab));
+
+/* ---------- Stats ---------- */
+document.getElementById('stat-q').textContent = QUESTIONS.length;
+document.getElementById('stat-f').textContent = FICHES.length;
+
+/* ---------- Progression & programme adaptatif ---------- */
+QUESTIONS.forEach((q,i)=>q._id=i);
+const LS_KEY='pbm_progress_v1';
+function defaultProgress(){return {placementDone:false,qResults:{},themeOverride:{}};}
+let progress=loadProgress();
+function loadProgress(){try{return Object.assign(defaultProgress(),JSON.parse(localStorage.getItem(LS_KEY)||'{}'));}catch(e){return defaultProgress();}}
+function saveProgress(){try{localStorage.setItem(LS_KEY,JSON.stringify(progress));}catch(e){}}
+const themeQuestions=id=>QUESTIONS.filter(q=>q.theme===id);
+function recordResult(qid,ok){if(qid==null)return;progress.qResults[qid]=ok?'ok':'ko';saveProgress();}
+function themeStats(id){
+  const qs=themeQuestions(id);const total=qs.length;
+  const ok=qs.filter(q=>progress.qResults[q._id]==='ok').length;
+  const pct=total?Math.round(ok/total*100):0;
+  const ov=progress.themeOverride[id];
+  const mastered = ov==='mastered' || pct>=85;
+  return {total,ok,pct,mastered};
+}
+function overall(){
+  const total=QUESTIONS.length;
+  const ok=QUESTIONS.filter(q=>progress.qResults[q._id]==='ok').length;
+  const masteredThemes=THEMES.filter(t=>themeStats(t.id).mastered).length;
+  return {total,ok,pct:total?Math.round(ok/total*100):0,masteredThemes,themesTotal:THEMES.length};
+}
+function masterAll(id){themeQuestions(id).forEach(q=>{progress.qResults[q._id]='ok';});}
+function markMastered(id){progress.themeOverride[id]='mastered';masterAll(id);saveProgress();renderProgram();}
+function reviewTheme(id){delete progress.themeOverride[id];themeQuestions(id).forEach(q=>{delete progress.qResults[q._id];});saveProgress();renderProgram();}
+function studyEverything(){progress.themeOverride={};progress.placementDone=true;saveProgress();renderProgram();}
+function resetProgress(){if(confirm('Réinitialiser toute votre progression et vos résultats ?')){progress=defaultProgress();saveProgress();renderProgram();}}
+
+function openFiche(id){
+  go('fiches');
+  const i=FICHES.findIndex(f=>f.id===id);
+  const el=document.querySelectorAll('#fiches-list .fiche')[i];
+  if(el){el.open=true;setTimeout(()=>el.scrollIntoView({block:'start'}),80);}
+}
+
+function themeCard(t,s,mastered){
+  const badge = mastered?"<span class='tbadge ok'>Acquis</span>":(s.pct>0?"<span class='tbadge mid'>En cours</span>":"<span class='tbadge todo'>À faire</span>");
+  const extra = mastered
+    ? "<button class='btn ghost sm' onclick=\"reviewTheme('"+t.id+"')\">À revoir</button>"
+    : "<button class='btn ghost sm' onclick=\"markMastered('"+t.id+"')\">Je connais déjà</button>";
+  return "<div class='tcard'>"+
+    "<div class='tcard-h'><b>"+t.titre+"</b>"+badge+"</div>"+
+    "<div class='progress sm'><i style='width:"+s.pct+"%'></i></div>"+
+    "<div class='tcard-meta'>"+s.ok+" / "+s.total+" notions validées · "+s.pct+"%</div>"+
+    "<div class='tcard-act'>"+
+      "<button class='btn sec sm' onclick=\"openFiche('"+t.id+"')\">Fiche</button>"+
+      "<button class='btn sm' onclick=\"startThemeQuiz('"+t.id+"')\">S'entraîner</button>"+
+      extra+
+    "</div></div>";
+}
+
+function renderProgram(justFinished){
+  const wrap=document.getElementById('program-content');
+  if(!progress.placementDone){
+    wrap.innerHTML="<div class='panel' style='text-align:center'>"+
+      "<h3>Votre parcours personnalisé</h3>"+
+      "<p class='hint' style='max-width:520px;margin:0 auto 16px'>Passez un court <strong>test de niveau</strong> (2 questions par thème, ~5 min). Le programme s'adapte : les thèmes déjà maîtrisés sont mis de côté et vous vous concentrez sur ce qu'il reste à apprendre.</p>"+
+      "<button class='btn' style='font-size:1.05rem;padding:14px 28px' onclick='startPlacement()'>Démarrer le test de niveau →</button>"+
+      "<div style='margin-top:14px'><button class='btn ghost' onclick='studyEverything()'>Ou étudier tous les thèmes sans test</button></div>"+
+    "</div>";
+    return;
+  }
+  const o=overall();
+  const themes=THEMES.map(t=>{const s=themeStats(t.id);return {t,s,m:s.mastered};});
+  const study=themes.filter(x=>!x.m).sort((a,b)=>a.s.pct-b.s.pct);
+  const done=themes.filter(x=>x.m);
+  const banner=justFinished?"<div class='banner'>Test terminé ! <strong>"+done.length+"</strong> thème(s) déjà acquis, <strong>"+study.length+"</strong> à travailler.</div>":"";
+  const next=study.length
+    ? "<div class='nextstep'>Prochaine étape : <strong>"+study[0].t.titre+"</strong> <button class='btn sm' onclick=\"startThemeQuiz('"+study[0].t.id+"')\">Commencer</button></div>"
+    : "<div class='nextstep done'>Programme terminé — tous les thèmes sont acquis. Continuez à vous entraîner pour rester au point.</div>";
+  const ringPct=o.themesTotal?Math.round(o.masteredThemes/o.themesTotal*100):0;
+  wrap.innerHTML=banner+
+    "<div class='dash'>"+
+      "<div class='ring2' style='--p:"+ringPct+"'><div class='inner'><b>"+o.masteredThemes+"/"+o.themesTotal+"</b><span>thèmes</span></div></div>"+
+      "<div class='dash-meta'><div class='dash-pct'>"+o.pct+"%</div><div class='dash-sub'>"+o.ok+" / "+o.total+" notions validées</div>"+next+"</div>"+
+    "</div>"+
+    (study.length?"<h3 class='prog-h'>À travailler ("+study.length+")</h3><div class='tlist'>"+study.map(x=>themeCard(x.t,x.s,false)).join('')+"</div>":"")+
+    (done.length?"<details class='donebox'><summary>Déjà maîtrisé ("+done.length+")</summary><div class='tlist'>"+done.map(x=>themeCard(x.t,x.s,true)).join('')+"</div></details>":"")+
+    "<div class='prog-tools'><button class='btn ghost' onclick='startPlacement()'>↻ Refaire le test de niveau</button><button class='btn ghost' onclick='resetProgress()'>Réinitialiser ma progression</button></div>";
+}
+
+function startPlacement(){
+  placementQids=[];let qs=[];
+  THEMES.forEach(t=>{qs=qs.concat(shuffle(themeQuestions(t.id)).slice(0,2));});
+  qs=shuffle(qs);
+  pool=qs.map(toPoolItem);
+  placementQids=pool.map(p=>p.qid);
+  idx=0;score=0;answered=false;isPlacement=true;
+  document.getElementById('quiz-setup').style.display='none';
+  document.getElementById('quiz-result').style.display='none';
+  document.getElementById('quiz-play').style.display='block';
+  go('quiz');renderQuestion();
+}
+function startThemeQuiz(id){
+  const qs=themeQuestions(id).slice().sort((a,b)=>(progress.qResults[a._id]==='ok'?1:0)-(progress.qResults[b._id]==='ok'?1:0));
+  pool=qs.map(toPoolItem);
+  idx=0;score=0;answered=false;isPlacement=false;
+  document.getElementById('quiz-setup').style.display='none';
+  document.getElementById('quiz-result').style.display='none';
+  document.getElementById('quiz-play').style.display='block';
+  go('quiz');renderQuestion();
+}
+function finishPlacement(){
+  isPlacement=false;
+  THEMES.forEach(t=>{
+    const sampled=placementQids.filter(id=>QUESTIONS[id].theme===t.id);
+    const allOk=sampled.length>0 && sampled.every(id=>progress.qResults[id]==='ok');
+    if(allOk){progress.themeOverride[t.id]='mastered';masterAll(t.id);}
+    else{delete progress.themeOverride[t.id];}
+  });
+  progress.placementDone=true;saveProgress();
+  go('program');renderProgram(true);
+}
+
+/* ---------- Fiches ---------- */
+const themeById = Object.fromEntries(THEMES.map(t=>[t.id,t]));
+(function renderFiches(){
+  const wrap = document.getElementById('fiches-list');
+  wrap.innerHTML = FICHES.map(f=>{
+    const t = themeById[f.id] || {icon:'📄'};
+    const nq = QUESTIONS.filter(q=>q.theme===f.id).length;
+    return `<details class="fiche">
+      <summary>${f.titre}<span class="chev">▾</span></summary>
+      <div class="body">${f.html}
+        <div class="fiche-cta"><button class="btn" onclick="startThemeQuiz('${f.id}')">S'entraîner sur ce thème (${nq} questions) →</button></div>
+      </div>
+    </details>`;
+  }).join('');
+})();
+function toggleAll(open){document.querySelectorAll('.fiche').forEach(d=>d.open=open);}
+
+/* ---------- Quiz setup ---------- */
+const selectedThemes = new Set();
+let mode = '10';
+(function renderChips(){
+  const wrap = document.getElementById('theme-chips');
+  wrap.innerHTML = THEMES.map(t=>{
+    const n = QUESTIONS.filter(q=>q.theme===t.id).length;
+    return `<div class="chip" data-theme="${t.id}">${t.titre}<span class="n">${n}</span></div>`;
+  }).join('');
+  wrap.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{
+    const id=c.dataset.theme;
+    if(selectedThemes.has(id)){selectedThemes.delete(id);c.classList.remove('on');}
+    else{selectedThemes.add(id);c.classList.add('on');}
+  });
+})();
+function setAllThemes(on){
+  document.querySelectorAll('#theme-chips .chip').forEach(c=>{
+    c.classList.toggle('on',on);
+    if(on) selectedThemes.add(c.dataset.theme); else selectedThemes.delete(c.dataset.theme);
+  });
+}
+document.querySelectorAll('#mode-chips .chip').forEach(c=>c.onclick=()=>{
+  document.querySelectorAll('#mode-chips .chip').forEach(x=>x.classList.remove('on'));
+  c.classList.add('on'); mode=c.dataset.mode;
+});
+
+/* ---------- Quiz engine ---------- */
+let pool=[], idx=0, score=0, answered=false, isPlacement=false, placementQids=[];
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+// shuffle a question's options while tracking the correct one, keep its stable id
+function toPoolItem(q){
+  const order = shuffle(q.a.map((_,i)=>i));
+  return {qid:q._id, theme:q.theme, q:q.q, exp:q.exp, ref:q.ref,
+    a: order.map(i=>q.a[i]), correct: order.indexOf(q.correct)};
+}
+
+function buildPool(){
+  let qs = selectedThemes.size ? QUESTIONS.filter(q=>selectedThemes.has(q.theme)) : QUESTIONS.slice();
+  qs = shuffle(qs);
+  if(mode==='10') qs=qs.slice(0,10);
+  else if(mode==='20') qs=qs.slice(0,20);
+  else if(mode==='exam') qs=qs.slice(0,Math.min(60,qs.length));
+  // mode 'all' -> keep everything
+  return qs.map(toPoolItem);
+}
+
+function startQuiz(){
+  pool=buildPool();
+  if(!pool.length){alert('Aucune question pour cette sélection.');return;}
+  idx=0;score=0;answered=false;isPlacement=false;
+  document.getElementById('quiz-setup').style.display='none';
+  document.getElementById('quiz-result').style.display='none';
+  document.getElementById('quiz-play').style.display='block';
+  go('quiz');
+  renderQuestion();
+}
+
+function renderQuestion(){
+  answered=false;
+  const q=pool[idx];
+  const t=themeById[q.theme]||{icon:'',titre:q.theme};
+  document.getElementById('q-theme').textContent = t.titre;
+  document.getElementById('q-text').innerHTML = q.q;
+  document.getElementById('q-count').textContent = `Question ${idx+1} / ${pool.length}`;
+  document.getElementById('score-pill').textContent = `Score : ${score}`;
+  document.getElementById('prog-bar').style.width = (idx/pool.length*100)+'%';
+
+  const letters=['A','B','C','D','E','F'];
+  const opts=document.getElementById('q-opts');
+  opts.innerHTML = q.a.map((txt,i)=>
+    `<button class="opt" data-i="${i}"><span class="letter">${letters[i]}</span><span>${txt}</span></button>`).join('');
+  opts.querySelectorAll('.opt').forEach(o=>o.onclick=()=>selectAnswer(parseInt(o.dataset.i)));
+
+  document.getElementById('q-explain').classList.remove('show');
+  document.getElementById('dontknow-btn').style.display = isPlacement ? 'inline-flex' : 'none';
+  const nb=document.getElementById('next-btn');
+  nb.disabled=true;
+  nb.classList.remove('ready');
+  nb.textContent = (idx===pool.length-1)?'Voir le résultat →':'Suivant →';
+}
+
+function selectAnswer(i){
+  if(answered) return;
+  answered=true;
+  const q=pool[idx];
+  const correct=q.correct;
+  const opts=document.getElementById('q-opts').querySelectorAll('.opt');
+  opts.forEach((o,k)=>{
+    o.classList.add('locked');
+    if(k===correct) o.classList.add('correct');
+    else if(k===i) o.classList.add('wrong');
+    else o.classList.add('dim');
+  });
+  const ok = i===correct;
+  if(ok) score++;
+  recordResult(pool[idx].qid, ok);
+  document.getElementById('dontknow-btn').style.display='none';
+  const ex=document.getElementById('q-explain');
+  const vd=document.getElementById('q-verdict');
+  vd.textContent = ok?'✓ Bonne réponse':'✗ Mauvaise réponse';
+  vd.className='verdict '+(ok?'ok':'no');
+  document.getElementById('q-exp-text').innerHTML=q.exp;
+  document.getElementById('q-ref').textContent=q.ref||'';
+  ex.classList.add('show');
+  document.getElementById('score-pill').textContent = `Score : ${score}`;
+  readyNext();
+}
+
+// enable, highlight and focus the Next button so Space/Enter advances
+function readyNext(){
+  const nb=document.getElementById('next-btn');
+  nb.disabled=false;
+  nb.classList.add('ready');
+  nb.focus();
+}
+
+function skipUnknown(){
+  if(answered) return;
+  answered=true;
+  const q=pool[idx];
+  const opts=document.getElementById('q-opts').querySelectorAll('.opt');
+  opts.forEach((o,k)=>{o.classList.add('locked'); if(k===q.correct)o.classList.add('correct'); else o.classList.add('dim');});
+  recordResult(q.qid,false);
+  const ex=document.getElementById('q-explain');
+  const vd=document.getElementById('q-verdict');
+  vd.textContent='Pas de réponse — à revoir';
+  vd.className='verdict no';
+  document.getElementById('q-exp-text').innerHTML=q.exp;
+  document.getElementById('q-ref').textContent=q.ref||'';
+  ex.classList.add('show');
+  document.getElementById('dontknow-btn').style.display='none';
+  readyNext();
+}
+
+function nextQuestion(){
+  if(idx<pool.length-1){idx++;renderQuestion();window.scrollTo({top:0,behavior:'smooth'});}
+  else showResult();
+}
+
+function showResult(){
+  document.getElementById('quiz-play').style.display='none';
+  if(isPlacement){ finishPlacement(); return; }
+  const r=document.getElementById('quiz-result');
+  r.style.display='block';
+  const pct=Math.round(score/pool.length*100);
+  document.getElementById('res-score').textContent=`${score} / ${pool.length}`;
+  const pass = pct>=80;
+  const vb=document.getElementById('res-verdict');
+  vb.textContent = pass?`Réussi — ${pct} %`:`À retravailler — ${pct} %`;
+  vb.className='verdict-big '+(pass?'pass':'fail');
+  let msg;
+  if(pct>=90) msg="Excellent ! Vous maîtrisez la théorie. Continuez sur les thèmes restants.";
+  else if(pct>=80) msg="Bien joué — au-dessus du seuil de réussite. Révisez les questions ratées.";
+  else if(pct>=50) msg="En bonne voie. Relisez les fiches des thèmes concernés et réessayez.";
+  else msg="Reprenez les fiches de révision avant de relancer un quiz.";
+  document.getElementById('res-detail').textContent=msg;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function quitQuiz(){
+  document.getElementById('quiz-play').style.display='none';
+  document.getElementById('quiz-result').style.display='none';
+  document.getElementById('quiz-setup').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
