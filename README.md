@@ -1,5 +1,7 @@
 # Permis bateau moteur Suisse (catégorie A) — Fiches & Quiz
 
+**🔗 Site en ligne : https://loupv.github.io/PermisBateau/**
+
 Page web autonome de révision pour l'**examen théorique du permis bateau à moteur catégorie A** en Suisse.
 
 - **10 fiches de révision** thématiques (règles de route, feux & signalisation, signaux acoustiques, balisage, météo, sécurité & équipement, matelotage, environnement, vitesses, cadre légal).
